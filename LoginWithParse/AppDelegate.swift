@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.setApplicationId("fWkxhmkaipAB73B0rT2jvlal3iu16NodCrZ3jdX4", clientKey: "4wLobXVxKmMLFeioL2bWp8U09YVbKuZZ7IaGAXj6")
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        
+        var testObject:PFObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackground()
+        //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+        //testObject[@"foo"] = @"bar";
+        //[testObject saveInBackground];
+
         return true
     }
 
